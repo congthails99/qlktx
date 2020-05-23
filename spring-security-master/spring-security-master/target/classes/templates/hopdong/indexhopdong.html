@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="stylesheet" type="text/css" href="/css/a.css" />
+<link rel="stylesheet" type="text/css" href="/css/menu.css" />
+<link rel="stylesheet" type="text/css" href="/css/table.css" />
+<title>Document</title>
+</head>
+
+<body>
+	<div id="wrapper">
+		<header>
+			<img src="/img/hnue.jpg" width='960px' height='300px' />
+		</header>
+		<div class="t-wrap">
+			<nav>
+				<ul>
+					<li><a href="#">Trang chủ</a></li>
+					<li><a href="#">Thông tin</a></li>
+					<li><a href="#">Quản lý </a>
+						<ul class="sub-menu">
+							<li><a href="sinhvien">Sinh viên</a>
+								<ul class="sub-menu">
+									<li><a href="#">Áo nam</a></li>
+									<li><a href="#">Quần nam</a></li>
+								</ul></li>
+							<li><a href="hopdong">Hợp đồng</a>
+								<ul class="sub-menu">
+									<li><a href="#">Áo nữ</a></li>
+									<li><a href="#">Quần nữ</a></li>
+								</ul></li>
+							<li><a href="#">Góc sinh viên</a></li>
+						</ul></li>
+					<li><a href="#">Sự kiện</a></li>
+					<li><a href="dangnhap.php">Đăng nhập</a></li>
+				</ul>
+			</nav>
+		</div>
+		<section>
+			<article>
+				<div align="center">
+					<a href="newHopdong">Thêm hợp đồng mới</a> <br>
+					<table id="customers" border="1">
+						<thead>
+							<tr>
+								<th>Mã hợp đồng</th>
+								<th>Mã sinh viên</th>
+								<th>Mã nhân viên</th>
+								<th>Số phòng</th>
+								<th>Khu nhà</th>
+								<th>Ngày lập</th>
+								<th>Ngày bắt đầu</th>
+								<th>Ngày kết thúc</th>
+								<th>Sửa</th>
+								<th>Xoá</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="hopdong : ${listHopdong}">
+								<td th:text="${hopdong.mahopdong}"></td>
+								<td th:text="${hopdong.masinhvien}"></td>
+								<td th:text="${hopdong.manhanvien}"></td>
+								<td th:text="${hopdong.sophong}"></td>
+								<td th:text="${hopdong.khunha}"></td>
+								<td th:text="${hopdong.ngaylap}"></td>
+								<td th:text="${hopdong.ngaybatdau}"></td>
+								<td th:text="${hopdong.ngayketthuc}"></td>
+								<td><a th:href="@{'/editHopdong/'+${hopdong.mahopdong}}">Sửa</a></td>
+								<td><a th:href="@{'/deleteHopdong/'+${hopdong.mahopdong}}">Xoá</a></td>
+							</tr>
+
+						</tbody>
+					</table>
+				</div>
+			</article>
+			<aside></aside>
+		</section>
+		<footer> Copy Right &copy; Truong Cong Thai - Vu Danh Duc </footer>
+	</div>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="/css/a.css" />
+<link rel="stylesheet" type="text/css" href="/css/menu.css" />
+<link rel="stylesheet" type="text/css" href="/css/table.css" />
+<title>Document</title>
+</head>
+
+<body>
+	<div id="wrapper">
+		<header>
+			<img src="/img/hnue.jpg" width='960px' height='300px' />
+		</header>
+		<div class="t-wrap">
+			<nav>
+				<ul>
+					<li><a href="/">Trang chủ</a></li>
+					<li><a href="#">Thông tin</a></li>
+					<li><a href="#">Quản lý </a>
+
+						<ul class="sub-menu">
+							<li><a href="/sinhvien">Sinh viên</a>
+								<ul class="sub-menu">
+									<li><a href="#">Áo nam</a></li>
+									<li><a href="#">Quần nam</a></li>
+								</ul></li>
+							<li><a href="/hopdong">Hợp đồng</a>
+								<ul class="sub-menu">
+									<li><a href="#">Áo nữ</a></li>
+									<li><a href="#">Quần nữ</a></li>
+								</ul></li>
+							<li><a href="#">Góc sinh viên</a></li>
+						</ul></li>
+					<li><a href="#">Sự kiện</a></li>
+					<li><a href="dangnhap.php">Đăng nhập</a></li>
+				</ul>
+			</nav>
+		</div>
+		<form action="" method="post">
+			<b> <font>Tim kiem theo gia: </font>
+			</b> <select name="tk" onchange="location=this.value;">
+				<option></option>
+				<option value="tk1.php">Dưới 100.000đ</option>
+				<option value="tk2.php">100.000đ đến 500.000đ</option>
+				<option value="tk3.php">500.000đ đến 1.000.000đ</option>
+				<option value="tk4.php">Trên 1.000.000đ</option>
+			</select>
+		</form>
+		<br>
+		<section>
+			<article>
+				<div align="center">
+					<h1>Sửa hợp đồng</h1>
+					<br>
+					<form action="#" th:action="@{/saveHopdong}" th:object="${hopdong}"
+						method="post">
+						<table border="1" id="customers">
+							<tr>
+								<td>Ma hop dong</td>
+								<td><input type="text" th:field="*{mahopdong}" /></td>
+							</tr>
+							<tr>
+								<td>Ma nhan vien</td>
+								<td><input type="text" th:field="*{manhanvien}" /></td>
+							</tr>
+							<tr>
+								<td>So phong</td>
+								<td><input type="text" th:field="*{sophong}" /></td>
+							</tr>
+							<tr>
+								<td>Khu nha</td>
+								<td><input th:field="*{khunha}" /></td>
+							</tr>
+							<tr>
+								<td>Ngay lap</td>
+								<td><input type="date" th:field="*{ngaylap}" /></td>
+							</tr>
+							<tr>
+								<td>Ngay bat dau</td>
+								<td><input type="date" th:field="*{ngaybatdau}" /></td>
+							</tr>
+							<tr>
+								<td>Ngay ket thuc</td>
+								<td><input type="date" th:field="*{ngayketthuc}" /></td>
+							</tr>
+							<tr>
+								<td colspan="2"><button type="submit">save</button></td>
+							</tr>
+						</table>
+					</form>
+				</div>
+			</article>
+			<aside></aside>
+		</section>
+		<footer> Copy Right &copy; Truong Cong Thai - Vu Danh Duc </footer>
+	</div>
+</body>
+
+</html>
+</body>
+</html>
